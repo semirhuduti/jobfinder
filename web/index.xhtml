@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:body>
+
+        <ui:composition template="template/common/layout.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+
+                    <br/><br/><br/>
+                    <br/><br/><br/>
+
+                    <h:form>
+
+                        <h:panelGrid columns="3">
+
+                            Enter your email :
+
+                            <h:inputText id="email" value="#{reg.email}" 
+                                         size="20" required="true" label="Email Address">
+
+                                <f:validator validatorId="util.validators.EmailValidator" />
+
+                            </h:inputText>
+
+                            <h:message for="email" style="color:red" />
+
+                        </h:panelGrid>
+
+                        <h:panelGrid columns="3">
+
+                            Enter your SSN:
+
+                            <h:inputText id="SSN" value="#{reg.SSN}" 
+                                         size="20" required="true" label="SSN">
+
+                                <f:validator validatorId="util.validators.SSNValidator" />
+
+                            </h:inputText>
+
+                            <h:message for="SSN" style="color:red" />
+
+                        </h:panelGrid>
+
+                        <h:panelGrid columns="3">
+
+                            Enter your username:
+
+                            <h:inputText id="username" value="#{reg.username}" 
+                                         size="20" required="true" label="Username">
+
+
+                            </h:inputText>
+
+                        </h:panelGrid>
+
+                        <h:panelGrid columns="3">
+
+                            Enter your password:
+
+                            <h:inputSecret id="password" value="#{reg.password}" 
+                                         size="20" required="true" label="password">
+
+                                <f:validator validatorId="util.validators.PasswordValidator" />
+
+                            </h:inputSecret>
+
+                            <h:message for="password" style="color:red" />
+
+                        </h:panelGrid>
+
+                        <h:panelGrid columns="3">
+
+                            Enter your First Name:
+
+                            <h:inputText id="firstName" value="#{reg.firstName}" 
+                                         size="20" required="true" label="First Name">
+
+                                <f:validator validatorId="util.validators.NameValidator" />
+
+                            </h:inputText>
+
+                            <h:message for="firstName" style="color:red" />
+
+                        </h:panelGrid>
+
+                        <h:panelGrid columns="3">
+
+                            Enter your Surname:
+
+                            <h:inputText id="surName" value="#{reg.surName}" 
+                                         size="20" required="true" label="Surname">
+
+                                <f:validator validatorId="util.validators.NameValidator" />
+
+                            </h:inputText>
+
+                            <h:message for="surName" style="color:red" />
+
+                        </h:panelGrid>
+
+
+                        <h:commandButton value="Submit" action="#{reg.addPersonToDB()}" />
+
+                    </h:form>
+
+
+                    <br/><br/><br/>
+                    <br/><br/><br/>
+                    <br/><br/><br/>
+                    <br/><br/><br/>
+                    <br/><br/><br/>
+                    <br/><br/><br/>
+                    <br/><br/><br/>
+                    <br/><br/><br/>
+                    <br/><br/><br/>
+                </h:form>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </h:body>
+
+</html>
